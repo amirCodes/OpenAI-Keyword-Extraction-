@@ -13,7 +13,6 @@ const App = () => {
   const extractKeywords = async (text) => {
     setLoading(true)
     setIsOpen(true)
-
     const options = {
       method: 'POST',
       headers: {
@@ -40,7 +39,7 @@ const App = () => {
         options
       )
       const json = await response.json()
-      console.log(json.choices[0].text.trim())
+      console.log(json)
       setKeywords(json.choices[0].text.trim())
       setLoading(false)
     } catch (error) {
